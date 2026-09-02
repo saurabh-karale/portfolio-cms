@@ -1,0 +1,28 @@
+<%- include('header.ejs'); %>
+ <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-greeting">Welcome to</span>
+                <h1><%= home.name %></h1>
+                <h2 id="typingText" >Portfolio CMS</h2>
+                <p><%= home.description %></p>
+                <div class="hero-buttons">
+                    <a href="/portfolio" class="btn btn-primary">View Portfolio</a>
+                    <a href="/contact" class="btn btn-secondary">Contact</a>
+                </div>
+                <div class="hero-social">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/<%= home.image %> "alt="Portfolio CMS" />
+            </div>
+        </div>
+
+    </section>
+<%- include('footer.ejs'); %>

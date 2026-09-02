@@ -1,0 +1,47 @@
+<%- include('header.ejs'); %>
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="page-header">
+            <h3>Edit Project</h3>
+        </div>
+
+        <form action="/admin/project_update" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="pid" value="<%= project.pid %>">
+            <input type="hidden" name="old_img" value="<%= project.pro_img %>">
+
+            <label>Project Logo</label>
+            <input type="text"
+                   name="pro_logo"
+                   class="form-control mb-3"
+                   value="<%= project.pro_logo %>">
+
+            <label>Project Name</label>
+            <input type="text"
+                   name="pro_name"
+                   class="form-control mb-3"
+                   value="<%= project.pro_name %>">
+
+            <label>Project Position</label>
+            <input type="text"
+                   name="pro_position"
+                   class="form-control mb-3"
+                   value="<%= project.pro_position %>">
+
+            <label>Project Image</label>
+            <input type="file"
+                   name="pro_img"
+                   class="form-control mb-3">
+
+            <button class="btn btn-success">
+                Update
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>

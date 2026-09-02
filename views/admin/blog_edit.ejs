@@ -1,0 +1,33 @@
+<%- include('header.ejs'); %>
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <form action="/admin/blog_update" method="post" enctype="multipart/form-data">
+
+                <input type="hidden" name="id" value="<%= blog.id %>">
+                <input type="hidden" name="old_img" value="<%= blog.blog_img %>">
+
+                <label>Blog Image</label>
+                <input type="file" name="blog_img" class="form-control mb-3">
+
+                <label>Blog Date</label>
+                <input type="text" name="blog_date" class="form-control mb-3" value="<%= blog.blog_date %>">
+
+                <label>Blog Name</label>
+                <input type="text" name="blog_name" class="form-control mb-3" value="<%= blog.blog_name %>">
+
+                <label>Blog Description</label>
+
+                <textarea name="blog_desc" class="form-control mb-3"><%= blog.blog_desc %></textarea>
+
+                <button class="btn btn-success">
+                    Update
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <%- include('footer.ejs'); %>

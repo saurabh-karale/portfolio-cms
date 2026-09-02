@@ -1,0 +1,40 @@
+<%- include("header.ejs") %>
+
+<div class="container mt-4">
+
+    <h3>Edit Experience</h3>
+
+    <form action="/admin/experience_update" method="post">
+
+        <input type="hidden" name="id" value="<%= experience.eid %>">
+
+        <div class="mb-3">
+            <label>Experience Duration</label>
+            <input type="text" name="exp_duration" class="form-control"
+                   value="<%= experience.exp_duration %>">
+        </div>
+
+        <div class="mb-3">
+            <label>Experience Position</label>
+            <input type="text" name="exp_position" class="form-control"
+                   value="<%= experience.exp_position %>">
+        </div>
+
+        <div class="mb-3">
+            <label>Experience Company</label>
+            <input type="text" name="exp_company" class="form-control"
+                   value="<%= experience.exp_company %>">
+        </div>
+
+        <div class="mb-3">
+            <label>Experience Description</label>
+            <textarea name="exp_desc" class="form-control"><%= experience.exp_desc %></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Update</button>
+
+    </form>
+
+</div>
+
+<%- include("footer.ejs") %>

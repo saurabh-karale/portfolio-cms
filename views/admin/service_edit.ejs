@@ -1,0 +1,32 @@
+<%- include("header.ejs") %>
+
+<div class="container mt-4">
+
+    <h3>Edit Service</h3>
+
+    <form action="/admin/service_update" method="post">
+
+        <input type="hidden" name="sid" value="<%= service.sid %>">
+
+        <div class="mb-3">
+            <label>Service Logo</label>
+            <input type="text" name="ser_logo" class="form-control" value="<%= service.ser_logo %>">
+        </div>
+
+        <div class="mb-3">
+            <label>Service Position</label>
+            <input type="text" name="ser_position" class="form-control" value="<%= service.ser_position %>">
+        </div>
+
+        <div class="mb-3">
+            <label>Description</label>
+            <textarea name="ser_desc" class="form-control"><%= service.ser_desc %></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Update</button>
+
+    </form>
+
+</div>
+
+<%- include("footer.ejs") %>

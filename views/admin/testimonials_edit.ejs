@@ -1,0 +1,57 @@
+<%- include('header.ejs'); %>
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <h3>Edit Testimonial</h3>
+
+        <form action="/admin/testimonials_update"
+              method="post"
+              enctype="multipart/form-data">
+
+            <input type="hidden"
+                   name="id"
+                   value="<%= testimonials.id %>">
+
+            <!-- OLD IMAGE -->
+            <input type="hidden"
+                   name="old_img"
+                   value="<%= testimonials.test_img %>">
+
+            <label>Star</label>
+            <input type="text"
+                   name="test_star"
+                   class="form-control mb-3"
+                   value="<%= testimonials.test_star %>">
+
+            <label>Description</label>
+            <textarea name="test_desc"
+                      class="form-control mb-3"><%= testimonials.test_desc %></textarea>
+
+            <label>Image</label>
+            <input type="file"
+                   name="test_img"
+                   class="form-control mb-3">
+
+            <label>Name</label>
+            <input type="text"
+                   name="test_name"
+                   class="form-control mb-3"
+                   value="<%= testimonials.test_name %>">
+
+            <label>Position</label>
+            <input type="text"
+                   name="test_position"
+                   class="form-control mb-3"
+                   value="<%= testimonials.test_position %>">
+
+            <button type="submit" class="btn btn-success">
+                Update
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>

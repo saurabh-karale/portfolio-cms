@@ -1,0 +1,70 @@
+<%- include('header.ejs'); %>
+
+
+    <!-- ===== DASHBOARD CONTENT ===== -->
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page Header -->
+            <div class="page-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h3 mb-1">Project List </h1>
+                    <p class="text-muted small mb-0">Welcome back, Here's your overview</p>
+                </div>
+
+            </div>
+
+            <!-- Stat Cards -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <table border="1" class="table table-border">
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Project Logo</th>
+                            <th>Project Name</th>
+                            <th>Project Position</th>
+                            <th>Project Image</th>
+                            <th>Status</th>
+                        </tr>
+                        <% for ( var i=0;i<project.length;i++){ %>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= project[i].pro_logo %>
+                                </td>
+                                <td>
+                                    <%= project[i].pro_name %>
+                                </td>
+                                <td>
+                                    <%= project[i].pro_position %>
+                                </td>
+                                <td>
+                                    <%= project[i].pro_img %>
+                                </td>
+                                <td>
+                                    <a href="/admin/project_delete/<%= project[i].pid %>">
+                                        <button class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </a>
+                                    <a href="/admin/project_edit/<%= project[i].pid %>">
+                                        <button class="btn btn-warning">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                    </a>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <%- include('footer.ejs'); %>

@@ -1,0 +1,70 @@
+<%- include('header.ejs'); %>
+
+
+    <!-- ===== DASHBOARD CONTENT ===== -->
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page Header -->
+            <div class="page-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h3 mb-1">Experience List </h1>
+                    <p class="text-muted small mb-0">Welcome back, Here's your overview</p>
+                </div>
+
+            </div>
+
+            <!-- Stat Cards -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <table border="1" class="table table-border">
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Experience Duration</th>
+                            <th>Experience Position</th>
+                            <th>Experience Company</th>
+                            <th>Experience Description</th>
+                            <th>Status</th>
+                        </tr>
+                        <% for ( var i=0;i<experience.length;i++){ %>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= experience[i].exp_duration %>
+                                </td>
+                                <td>
+                                    <%= experience[i].exp_position %>
+                                </td>
+                                <td>
+                                    <%= experience[i].exp_company %>
+                                </td>
+                                <td>
+                                    <%= experience[i].exp_desc %>
+                                </td>
+                                <td>
+                                    <a href="/admin/experience_delete/<%= experience[i].eid %>">
+                                        <button class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </a>
+
+                                    <a href="/admin/experience_edit/<%= experience[i].eid %>">
+                                        <button class="btn btn-warning">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <%- include('footer.ejs'); %>

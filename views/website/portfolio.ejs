@@ -1,0 +1,53 @@
+<%- include('header.ejs'); %>
+    <!-- ===== PORTFOLIO SECTION ===== -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Projects</span>
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-desc">Projects managed through Portfolio CMS</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+
+                <% for(var i=0; i < project.length; i++) { %>
+
+                    <div class="portfolio-item" data-category="web">
+
+                        <img src="/<%=project[i].pro_img%>">
+
+                        <div class="portfolio-overlay">
+
+                            <h3>
+                                <%= project[i].pro_name %>
+                            </h3>
+
+                            <p>
+                                <%= project[i].pro_position %>
+                            </p>
+
+                            <a href="#" class="portfolio-link">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <% } %>
+
+            </div>
+        </div>
+    </section>
+
+
+    <%- include('footer.ejs'); %>

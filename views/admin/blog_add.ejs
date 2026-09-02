@@ -1,0 +1,38 @@
+<%- include('header.ejs'); %>
+
+
+    <!-- ===== DASHBOARD CONTENT ===== -->
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page Header -->
+            <div class="page-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h3 mb-1">Add Blog</h1>
+                    <p class="text-muted small mb-0">Welcome back, Here's your overview</p>
+                </div>
+                
+            </div>
+
+            <!-- Stat Cards -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <form action="/admin/blog_add_save" method="post" enctype="multipart/form-data">
+                        <label>Blog Image</label>
+                        <input type="file" name="blog_img" class="form-control mb-4">
+                        <label>Blog Date</label>
+                        <input type="text" name="blog_date" class="form-control  mb-4">
+                        <label>Blog Name</label>
+                        <input type="text" name="blog_name" class="form-control  mb-4">
+                        <label>Blog Description</label>
+                        <input type="text" name="blog_desc" class="form-control  mb-4">
+                        <button class="btn btn-primary">Save</button>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <%- include('footer.ejs'); %>

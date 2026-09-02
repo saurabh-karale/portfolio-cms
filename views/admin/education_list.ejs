@@ -1,0 +1,66 @@
+<%- include('header.ejs'); %>
+
+
+    <!-- ===== DASHBOARD CONTENT ===== -->
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page Header -->
+            <div class="page-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h3 mb-1">Education List </h1>
+                    <p class="text-muted small mb-0">Welcome back, Here's your overview</p>
+                </div>
+
+            </div>
+
+            <!-- Stat Cards -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <table border="1" class="table table-border">
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Education Duration</th>
+                            <th>Education Position</th>
+                            <th>Education Company</th>
+                            <th>Status</th>
+                        </tr>
+                        <% for ( var i=0;i<education.length;i++){ %>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= education[i].edu_duration %>
+                                </td>
+                                <td>
+                                    <%= education[i].edu_position %>
+                                </td>
+                                <td>
+                                    <%= education[i].edu_company %>
+                                </td>
+                                <td>
+                                    <a href="/admin/education_delete/<%= education[i].eid %>">
+                                        <button class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </a>
+
+                                    <a href="/admin/education_edit/<%= education[i].eid %>">
+                                        <button class="btn btn-warning">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <%- include('footer.ejs'); %>

@@ -1,0 +1,29 @@
+<%- include("header.ejs") %>
+
+<div class="container mt-4">
+
+    <h3>Edit Skill</h3>
+
+    <form action="/admin/skill_update" method="post">
+
+        <input type="hidden" name="id" value="<%= skill.ts_id %>">
+
+        <div class="mb-3">
+            <label>Technology Name</label>
+            <input type="text" name="tech_name" class="form-control"
+                   value="<%= skill.tech_name %>">
+        </div>
+
+        <div class="mb-3">
+            <label>Technology Per(%)</label>
+            <input type="text" name="tech_per" class="form-control"
+                   value="<%= skill.tect_per %>">
+        </div>
+
+        <button type="submit" class="btn btn-success">Update</button>
+
+    </form>
+
+</div>
+
+<%- include("footer.ejs") %>

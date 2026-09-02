@@ -1,0 +1,29 @@
+<%- include('header.ejs'); %>
+    <!-- ===== SERVICES SECTION ===== -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">What This Project Offers</h2>
+                <p class="section-desc">Key features and capabilities of this Portfolio CMS</p>
+            </div>
+
+            <div class="services-grid">
+                <% for (var i=0;i<data.length;i++) { %>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="<%= data[i].ser_logo %>"></i>
+                        </div>
+                        <h3>
+                            <%=data[i].ser_position%>
+                        </h3>
+                        <p>
+                            <%=data[i].ser_desc%>
+                        </p>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+
+    </section>
+    <%- include('footer.ejs'); %>

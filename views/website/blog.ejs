@@ -1,0 +1,47 @@
+<%- include('header.ejs'); %>
+
+    <!-- ===== LATEST BLOG SECTION ===== -->
+    <section class="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Blog</span>
+                <h2 class="section-title">Latest Project Insights</h2>
+                <p class="section-desc">Updates, features and development insights from this project</p>
+            </div>
+
+            <div class="blog-grid">
+
+                <% for(var i=0;i<blog.length;i++){ %>
+
+                    <article class="blog-card">
+
+                        <img src="/<%= blog[i].blog_img %>">
+
+                        <div class="blog-content">
+
+                            <span class="blog-date">
+                                <%= blog[i].blog_date %>
+                            </span>
+
+                            <h3>
+                                <%= blog[i].blog_name %>
+                            </h3>
+
+                            <p>
+                                <%= blog[i].blog_desc %>
+                            </p>
+
+                            <a href="#" class="read-more">
+                                Read More →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <% } %>
+
+            </div>
+        </div>
+    </section>
+    <%- include('footer.ejs'); %>

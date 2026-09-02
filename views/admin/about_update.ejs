@@ -1,0 +1,101 @@
+<%- include('header.ejs') %>
+
+    <div class="card-body">
+        <form action="/admin/about_save" method="POST" enctype="multipart/form-data">
+
+            <h1>About Page Update</h1>
+
+            <!-- Title -->
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                <input type="text" name="title" value="<%= data.title %>" class="form-control">
+            </div>
+
+            <!-- Subtitle -->
+            <div class="mb-3">
+                <label class="form-label">Subtitle</label>
+                <input type="text" name="subtitle" value="<%= data.subtitle %>" class="form-control">
+            </div>
+
+            <!-- Position -->
+            <div class="mb-3">
+                <label class="form-label">Position</label>
+                <input type="text" name="position" value="<%= data.position %>" class="form-control">
+            </div>
+
+            <!-- Position Description -->
+            <div class="mb-3">
+                <label class="form-label">Position Description</label>
+                <textarea name="position_desc" rows="5" class="form-control"><%= data.position_desc %></textarea>
+            </div>
+
+            <!-- Name -->
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" value="<%= data.name %>" class="form-control">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="text" name="email" value="<%= data.email %>" class="form-control">
+            </div>
+
+            <!-- Location -->
+            <div class="mb-3">
+                <label class="form-label">Location</label>
+                <input type="text" name="location" value="<%= data.location %>" class="form-control">
+            </div>
+
+            <!-- Freelance -->
+            <div class="mb-3">
+                <label class="form-label">Freelance</label>
+                <input type="text" name="freelance" value="<%= data.freelance %>" class="form-control">
+            </div>
+
+            <!-- Projects Completed -->
+            <div class="mb-3">
+                <label class="form-label">Projects Completed</label>
+                <input type="text" name="projects_completed" value="<%= data.projects_completed %>"
+                    class="form-control">
+            </div>
+
+            <!-- Happy Clients -->
+            <div class="mb-3">
+                <label class="form-label">Happy Clients</label>
+                <input type="text" name="happy_clients" value="<%= data.happy_clients %>" class="form-control">
+            </div>
+
+            <!-- Awards Won -->
+            <div class="mb-3">
+                <label class="form-label">Awards Won</label>
+                <input type="text" name="awards_won" value="<%= data.awards_won %>" class="form-control">
+            </div>
+
+            <!-- Years Experience -->
+            <div class="mb-3">
+                <label class="form-label">Years Experience</label>
+                <input type="text" name="years_experience" value="<%= data.years_experience %>" class="form-control">
+            </div>
+
+
+            <!-- Profile Image -->
+            <div class="mb-3">
+                <label class="form-label">Profile Image</label>
+                <input type="hidden" name="old_image" value="<%= data.image %>">
+                <input type="file" name="image" class="form-control">
+                <img src="/<%= data.image %>" alt="" height="100px" width="150px">
+            </div>
+
+            <!-- Button -->
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Update
+                </button>
+            </div>
+
+
+        </form>
+    </div>
+
+    <%- include('footer.ejs') %>

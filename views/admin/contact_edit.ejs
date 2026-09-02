@@ -1,0 +1,86 @@
+<%- include('header.ejs'); %>
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <div class="page-header mb-4">
+                <h2 class="fw-bold">Edit Contact Message</h2>
+                <p class="text-muted">Update contact message details.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">
+                                <i class="fa fa-edit"></i> Edit Contact
+                            </h5>
+                        </div>
+
+                        <div class="card-body">
+
+                            <form action="/admin/contact_update" method="POST">
+
+                                <input type="hidden" name="cid" value="<%= contact.cid %>">
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">
+                                        Full Name
+                                    </label>
+                                    <input type="text" class="form-control" name="full_name"
+                                        value="<%= contact.c_name %>" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">
+                                        Email Address
+                                    </label>
+                                    <input type="email" class="form-control" name="email" value="<%= contact.c_email %>"
+                                        required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">
+                                        Subject
+                                    </label>
+                                    <input type="text" class="form-control" name="subject"
+                                        value="<%= contact.c_subject %>" required>
+                                </div>  
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-semibold">
+                                        Message
+                                    </label>
+
+                                    <textarea class="form-control" rows="6" name="message"
+                                        required><%= contact.c_message %></textarea>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+
+                                    <a href="/admin/contact_list" class="btn btn-secondary">
+                                        <i class="fa fa-arrow-left"></i>
+                                        Back
+                                    </a>
+
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fa fa-save"></i>
+                                        Update Contact
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <%- include('footer.ejs'); %>
